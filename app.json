@@ -33,7 +33,7 @@
     "DURATION_LIMIT": {
       "description": "Max audio duration limit for downloads (minutes).",
       "required": true,
-      "value": "10"
+      "value": "60"
     },
 	"GROUP": {
       "description": "username group.",
@@ -44,6 +44,11 @@
       "description": "username channel.",
       "required": true,
       "value": "owogram"
-    }
+    },
+	"BOT_USERNAME": {
+      "description": "username",
+      "required": true,
+      "value": ""
+    },
   }
 }
