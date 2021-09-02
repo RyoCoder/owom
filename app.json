@@ -49,6 +49,6 @@
       "description": "username",
       "required": true,
       "value": ""
-    },
+    }
   }
 }
