@@ -18,7 +18,7 @@ import pyrogram
 
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-@app.on_message(pyrogram.filters.command(["timkiem", f"timkiem@{BOT_USERNAME}]))
+@app.on_message(pyrogram.filters.command(["timkiem", f"timkiem@{BOT_USERNAME}"]))
 async def ytsearch(_, message: Message):
     try:
         if len(message.command) < 2:
