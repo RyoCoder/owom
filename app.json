@@ -2,7 +2,7 @@
   "name": "Music Bot",
   "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
   "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/ImJanindu/GroupMusicBot",
+  "repository": "https://github.com/RyoCoder/GroupMusicBot",
   "stack": "container",
   "env": {
     "SESSION_NAME": {
@@ -34,6 +34,16 @@
       "description": "Max audio duration limit for downloads (minutes).",
       "required": true,
       "value": "10"
+    },
+	"GROUP": {
+      "description": "username group.",
+      "required": true,
+      "value": "owohub"
+    },
+	"CHANNEL": {
+      "description": "username channel.",
+      "required": true,
+      "value": "owogram"
     }
   }
 }
