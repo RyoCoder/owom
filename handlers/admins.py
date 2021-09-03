@@ -18,7 +18,7 @@ async def pause(_, message: Message):
     ) or (
             callsmusic.pytgcalls.active_calls[message.chat.id] == 'paused'
     ):
-        await message.reply_text("❗ Không có gì đang chơi!")
+        await message.reply_text("❗ Ngáo hã, không có bài nào cũng dừng!")
     else:
         callsmusic.pytgcalls.pause_stream(message.chat.id)
         await message.reply_text("▶️ Bị tạm dừng!")
@@ -33,7 +33,7 @@ async def resume(_, message: Message):
     ) or (
             callsmusic.pytgcalls.active_calls[message.chat.id] == 'playing'
     ):
-        await message.reply_text("❗ Không có gì bị tạm dừng!")
+        await message.reply_text("❗  Ủa ngộ hen, chưa dừng mà lại tiếp tục!")
     else:
         callsmusic.pytgcalls.resume_stream(message.chat.id)
         await message.reply_text("⏸ Tiếp tục!")
@@ -44,7 +44,7 @@ async def resume(_, message: Message):
 @authorized_users_only
 async def stop(_, message: Message):
     if message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❗ Không có gì đang phát trực tuyến!")
+        await message.reply_text("❗ Ủa ngộ hen, không có bài nào cũng tắt??")
     else:
         try:
             callsmusic.queues.clear(message.chat.id)
@@ -52,7 +52,7 @@ async def stop(_, message: Message):
             pass
 
         callsmusic.pytgcalls.leave_group_call(message.chat.id)
-        await message.reply_text("❌ Đã dừng phát trực tuyến!")
+        await message.reply_text("❌ Đã dừng phát nhạc!")
 
 
 @Client.on_message(command("chuyenbai") & other_filters)
@@ -60,7 +60,7 @@ async def stop(_, message: Message):
 @authorized_users_only
 async def skip(_, message: Message):
     if message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❗ Không có gì đang chơi để bỏ qua!")
+        await message.reply_text("❗ Có bài nào đâu mà chuyển má!")
     else:
         callsmusic.queues.task_done(message.chat.id)
 
@@ -72,4 +72,4 @@ async def skip(_, message: Message):
                 callsmusic.queues.get(message.chat.id)["file"]
             )
 
-        await message.reply_text("➡️ Đã bỏ qua bài hát hiện tại!")
+        await message.reply_text("➡️ Rồi xong, đã chuyển bài tiếp theo!")
