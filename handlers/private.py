@@ -13,11 +13,18 @@ async def start(_, message: Message):
 
 Tui có thể phát nhạc trong cuộc gọi thoại của nhóm bạn. Được phát triển bởi [owogram](https://t.me/owogram).
 
-Nâng cấp bot để thêm tín năng:**
-1. Thêm nút chọn bài
-2. Nút quản lý trình phát nhạc
-3. Trợ lý tự động
-4. Hoạt động mượt, linh hoạt
+Nâng cấp bot để thêm tín năng sau:**
+• Thời lượng nhạc không giới hạn
+• Thêm nút chọn bài
+• Bảng cài đặt
+• Điều khiển bằng các nút
+• Phát nhạc trên kênh
+• Hàng đợi không giới hạn
+• Trợ lý tự động tham gia
+• Tự động xóa lệnh
+• Không cho thành viên bất kỳ mở nhạc
+• Khóa chat, tạm khóa, và cấm thành viên
+• Hoạt động mượt, linh hoạt
 
 **Liên hệ: [Ryo Star](https://t.me/ryostar)** 🎵
         """,
