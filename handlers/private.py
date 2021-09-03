@@ -9,11 +9,17 @@ from helpers.filters import other_filters2
 async def start(_, message: Message):
     await message.reply_sticker("CAACAgUAAx0CXxlzEwABAUVhYTEYkSeUDfME8f8AAeuk_0I1DyDGAAL6BAACWVOJVdLn7ez7kDaoIAQ")
     await message.reply_text(
-        f"""**Tao là {bn} 🎵
+        f"""**Tui là là {bn} 🎵
 
-Tao có thể phát nhạc trong cuộc gọi thoại của nhóm bạn. Được phát triển bởi [owogram](https://t.me/owogram).
+Tui có thể phát nhạc trong cuộc gọi thoại của nhóm bạn. Được phát triển bởi [owogram](https://t.me/owogram).
 
-Thêm tôi vào nhóm của bạn và chơi nhạc tự do!**
+Nâng cấp bot để thêm tín năng:**
+1. Thêm nút chọn bài
+2. Nút quản lý trình phát nhạc
+3. Trợ lý tự động
+4. Hoạt động mượt, linh hoạt
+
+**Liên hệ: [Ryo Star](https://t.me/ryostar)** 🎵
         """,
         reply_markup=InlineKeyboardMarkup(
             [
