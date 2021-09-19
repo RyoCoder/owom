@@ -3,7 +3,8 @@ from os import path
 import requests
 import aiohttp
 import youtube_dl
-from pyrogram import Client
+from pyrogram import Client, filters
+from pyrogram.types import CallbackQuery
 from pyrogram.types import Message, Voice
 from youtube_search import YoutubeSearch
 from callsmusic import callsmusic, queues
@@ -64,7 +65,9 @@ async def play(_, message: Message):
                         text="Xem trên YouTube 🎬",
                         url=f"{url}")
                    
-                ]
+                ],
+               [
+                    InlineKeyboardButton("❌ Close", "close")],
             ]
         )
 
@@ -74,8 +77,9 @@ async def play(_, message: Message):
                     InlineKeyboardButton(
                         text="Xem trên YouTube 🎬",
                         url=f"{url}")
-                   
-                ]
+                ],
+                [
+                    InlineKeyboardButton("❌ Close", "close")],
             ]
         )
 
@@ -106,3 +110,8 @@ async def play(_, message: Message):
         ),
     )
         return await lel.delete()
+
+    
+@Client.on_callback_query(filters.regex("close"))
+async def close(client: Client, query: CallbackQuery):
+    await query.message.delete()
