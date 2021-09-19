@@ -7,7 +7,7 @@ from pyrogram import Client
 from config import BOT_USERNAME
 from helpers.filters import command
 
-@Client.on_message(command(["asupan", f"asupan@{BOT_USERNAME}"]))
+@Client.on_message(command(["fun", f"fun@{BOT_USERNAME}"]))
 async def asupan(client, message):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/asupan/ptl").json()
@@ -27,7 +27,7 @@ async def wibu(client, message):
         await message.reply_text("`Đã xảy ra lỗi LOL...`")
 
 
-@Client.on_message(command(["chika", f"chika@{BOT_USERNAME}"]))
+@Client.on_message(command(["fun1", f"fun1@{BOT_USERNAME}"]))
 async def chika(client, message):
     try:
         resp = requests.get("https://api-tede.herokuapp.com/api/chika").json()
