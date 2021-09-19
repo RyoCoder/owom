@@ -1,6 +1,7 @@
 from os import path
 
-from pyrogram import Client
+from pyrogram import Client, filters
+from pyrogram.types import CallbackQuery
 from pyrogram.types import Message, Voice
 
 from callsmusic import callsmusic, queues
@@ -15,7 +16,7 @@ from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-@Client.on_message(command(["reply", f"reply@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["play", f"play@{BOT_USERNAME}"]) & other_filters)
 @errors
 async def play(_, message: Message):
 
@@ -30,7 +31,8 @@ async def play(_, message: Message):
                         text="🆘 BÁO LỖI 🆘",
                         url="https://t.me/{GROUP}")
                    
-                ]
+                ],[
+                    InlineKeyboardButton("❌ Close", "close")],
             ]
         )
 
@@ -66,3 +68,9 @@ async def play(_, message: Message):
         ),
     )
         return await lel.delete()
+
+    
+ @Client.on_callback_query(filters.regex("close"))
+async def close(client: Client, query: CallbackQuery):
+    await query.message.delete()
+   
