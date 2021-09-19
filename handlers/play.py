@@ -70,7 +70,7 @@ async def play(_, message: Message):
         return await lel.delete()
 
     
- @Client.on_callback_query(filters.regex("close"))
+@Client.on_callback_query(filters.regex("close"))
 async def close(client: Client, query: CallbackQuery):
     await query.message.delete()
    
