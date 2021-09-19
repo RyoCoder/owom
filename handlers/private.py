@@ -7,7 +7,7 @@ from helpers.filters import other_filters2
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
-    await message.reply_sticker("CAACAgUAAx0CXxlzEwABAUVhYTEYkSeUDfME8f8AAeuk_0I1DyDGAAL6BAACWVOJVdLn7ez7kDaoIAQ")
+    await message.reply_sticker("CAACAgUAAxkBAAIEVGFHbudhpJ6Bs7oEctD0UkeyfQqjAAKUAwACrNI5VtytqfsDUe1XIAQ")
     await message.reply_text(
         f"""**Tui là là {bn} 🎵
 
@@ -16,12 +16,16 @@ Tui có thể phát nhạc trong cuộc gọi thoại của nhóm bạn.
 Lệnh bot:**
 • /play <url YTB/File> Mở nhạc bằng link YTP or File Telegram
 • /p <tên bài hát> - Phát bài hát theo yêu cầu
+
 • /tamdung - Tạm dừng nhạc
 • /tieptuc - Tiếp tục phát nhạc
 • /tatnhac - Tắt nhạc, rời voice chat
 • /chuyenbai - Skip / bỏ qua bài hát
+
 • /rmd - Xóa tất cả các tệp đã tải xuống
 • /clean - Xóa tất cả các tệp thô
+• /ping - Check trạng thái của bot
+
 
 • /taimp3 - Tải xuống file mp3 bài hát
 • /timkiem - Tìm kiếm Youtube
